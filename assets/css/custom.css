@@ -1,0 +1,128 @@
+html,
+body {
+    height: 100%;
+}
+
+.page-wrapper {
+    overflow-y: auto;
+    font-family: myVazir;
+}
+
+.clear {
+    clear: both;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: bold;
+    color: seagreen;
+}
+
+.notpad-wrapper {
+    background-image: url('../images/notepaper-brown.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.notpad-wrapper form textarea {
+    font-family: myVazir;
+    font-size: 16px;
+    min-height: 450px;
+    padding: 12px;
+    outline-color: #fff;
+    font-size: 15px;
+    resize: none;
+    overflow-y: auto;
+}
+
+.notpad-wrapper form button {
+    padding: 10px 40px;
+    font-size: 16px;
+    font-family: myVazir;
+    background-color: rgb(29, 136, 139);
+    opacity: 0.8;
+    border-radius: 4px;
+    outline: none;
+}
+
+.notpad-wrapper form button:hover {
+    opacity: 1;
+}
+
+.left {
+    height: 520px;
+    padding: 10px 5px;
+}
+
+.left h4 {
+    font-size: 18px !important;
+    font-weight: bold;
+    margin-top: -1px;
+    margin-bottom: 25px;
+}
+
+#notes-container {
+    overflow: auto;
+    max-height: 400px;
+}
+
+#notes-container .note {
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-top: 1px solid #757575;
+    padding-top: 30px;
+    padding-left: 20px;
+    line-height: 27px;
+    background-color: #fff;
+}
+
+#notes-container .note .btns-container {
+    float: right;
+}
+
+#notes-container .note .btns-container button {
+    width: 30px;
+    margin-top: 20px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    outline: none;
+}
+
+#notes-container .note .btns-container i {
+    font-size: 32px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+#notes-container .note .del-container i {
+    margin-right: 11px;
+}
+
+#notes-container .note .del-container i:hover {
+    color: #E53935;
+}
+
+#notes-container .note .edit-container i {
+    margin-right: 2.5px;
+}
+
+#notes-container .note .edit-container i:hover {
+    color: #43A047;
+}
+
+#notes-container .note li {
+    font-size: 13px;
+    margin-top: -9px;
+    list-style-type: decimal;
+    float: left;
+    width: 83%;
+    text-align: right;
+}
+
+@font-face {
+    font-family: 'myVazir';
+    src: url('../fonts/Vazir-Medium.eot') format('eot'),
+        url('../fonts/Vazir-Medium.woff2') format('woff2'),
+        url('../fonts/Vazir-Medium.woff') format('woff');
+}

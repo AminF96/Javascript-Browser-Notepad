@@ -5,7 +5,7 @@ body {
 
 .page-wrapper {
     overflow-y: auto;
-    font-family: myVazir;
+    font-family: 'Vazir', sans-serif;
 }
 
 .clear {
@@ -25,7 +25,7 @@ h1 {
 }
 
 .notpad-wrapper form textarea {
-    font-family: myVazir;
+    font-family: 'Vazir', sans-serif;
     font-size: 16px;
     min-height: 450px;
     padding: 12px;
@@ -38,7 +38,7 @@ h1 {
 .notpad-wrapper form button {
     padding: 10px 40px;
     font-size: 16px;
-    font-family: myVazir;
+    font-family: 'Vazir', sans-serif;
     background-color: rgb(29, 136, 139);
     opacity: 0.8;
     border-radius: 4px;
@@ -118,11 +118,4 @@ h1 {
     float: left;
     width: 83%;
     text-align: right;
-}
-
-@font-face {
-    font-family: 'myVazir';
-    src: url('../fonts/Vazir-Medium.eot') format('eot'),
-        url('../fonts/Vazir-Medium.woff2') format('woff2'),
-        url('../fonts/Vazir-Medium.woff') format('woff');
 }

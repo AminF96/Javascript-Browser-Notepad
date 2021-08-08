@@ -1,5 +1,5 @@
 // everything related to UI
-class UI {
+export default class UI {
     // empty an element
     _emptyElem(elem) {
         elem.innerHTML = '';

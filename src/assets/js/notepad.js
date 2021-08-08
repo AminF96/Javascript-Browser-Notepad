@@ -1,12 +1,15 @@
+import LS from "./ls";
+import UI from "./ui";
+
 // everything related to browser notepad
-class NotePad {
-    _ls = new LS;
-    _ui = new UI;
+export default class NotePad {
+    _lsInstance = new LS;
+    _uiInstance = new UI;
     _NOTES = 'notes';
 
     // add new note 
     addNote(note) {
-        let notesArr = this._ls.getInfo(this._NOTES);
+        let notesArr = this._lsInstance.getInfo(this._NOTES);
 
         // create note object
         const noteInfo = {
@@ -16,15 +19,15 @@ class NotePad {
 
         // save notes in localStorage
         notesArr.push(noteInfo);
-        this._ls.setInfo(this._NOTES, notesArr);
+        this._lsInstance.setInfo(this._NOTES, notesArr);
 
         // update UI
-        this._ui.updateNotes(notesArr);
+        this._uiInstance.updateNotes(notesArr);
     }
 
     // delete a note
     deleteNote(noteId) {
-        let notesArr = this._ls.getInfo(this._NOTES);
+        let notesArr = this._lsInstance.getInfo(this._NOTES);
 
         // find and delete chosen note
         notesArr.map(
@@ -36,15 +39,15 @@ class NotePad {
         );
 
         // save changes in localStorage
-        this._ls.setInfo(this._NOTES, notesArr);
+        this._lsInstance.setInfo(this._NOTES, notesArr);
 
         // update notes UI
-        this._ui.updateNotes(notesArr);
+        this._uiInstance.updateNotes(notesArr);
     }
 
     // edite a note
     editNote(editedNote, id) {
-        let notesArr = this._ls.getInfo(this._NOTES);
+        let notesArr = this._lsInstance.getInfo(this._NOTES);
 
         // find and edite chosen note
         notesArr.map(
@@ -56,9 +59,9 @@ class NotePad {
         );
 
         // save changes in localStorage
-        this._ls.setInfo(this._NOTES, notesArr);
+        this._lsInstance.setInfo(this._NOTES, notesArr);
 
         // update UI
-        this._ui.updateNotes(notesArr);
+        this._uiInstance.updateNotes(notesArr);
     }
 }

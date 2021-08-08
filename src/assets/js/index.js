@@ -1,4 +1,8 @@
 'use srict';
+// import styles
+import '../css/bootstrap-rtl.css';
+import '../css/custom.css';
+
 // constants & variables
 const form = document.querySelector('#form');
 const noteInput = document.querySelector('#note');
@@ -7,7 +11,13 @@ const notesWrapper = document.querySelector('#notes-container');
 let isEdit = false; // for understand if submit on form is for editing a note or not
 
 // clasess
-const notepad = new NotePad;
+import NotePad from "./notepad";
+import UI from "./ui";
+import LS from "./ls";
+
+const notePadInstance = new NotePad;
+const uiInstance = new UI;
+const lsInstance = new LS;
 
 // eventListeners
 eventListeners();
@@ -15,7 +25,7 @@ eventListeners();
 function eventListeners() {
     // when page load was complete
     document.addEventListener('DOMContentLoaded', (e) => {
-        new UI().updateNotes(new LS().getInfo('notes'));
+        uiInstance.updateNotes(lsInstance.getInfo('notes'));
     });
 
     // when submit happens on form
@@ -26,7 +36,7 @@ function eventListeners() {
         if (isEdit) {
             document.querySelectorAll('[editing]').forEach(element => {
                 if (element.getAttribute('editing') == 'true') {
-                    notepad.editNote(noteInput.value, element.dataset.id);
+                    notePadInstance.editNote(noteInput.value, element.dataset.id);
                 }
             });
 
@@ -36,7 +46,7 @@ function eventListeners() {
         }
 
         // add a new note 
-        notepad.addNote(noteInput.value);
+        notePadInstance.addNote(noteInput.value);
     });
 
     // when click happens on notes container
@@ -49,7 +59,7 @@ function eventListeners() {
         // if click happens on delete note button
         if (target.classList.contains('del-button')) {
             const noteElement = target.parentElement.parentElement.parentElement;
-            notepad.deleteNote(noteElement.dataset.id);
+            notePadInstance.deleteNote(noteElement.dataset.id);
         }
 
         // if click happens on edit note button
